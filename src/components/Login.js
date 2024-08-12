@@ -1,7 +1,29 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Header from './Header'
+import { checkValidData } from '../utils/validate';
 
 const Login = () => {
+    const[isSignInForm , setIsSignInForm]= useState(true);
+    const[errMessage , setErrorMessage] = useState(null);
+
+    const signUpHandler = () =>{
+        setIsSignInForm(!isSignInForm);
+    }
+
+    //FORM VALIDATION:--
+    const email= useRef(null);
+    const password= useRef(null);
+    const name= useRef(null); 
+
+    const formValidator=() =>{
+        const message = checkValidData(email.current.value , password.current.value ,name.current.value ); 
+        setErrorMessage(message);
+
+        //once form validate**
+        // sign In/ sign Up
+
+    }
+
     return (
         <div >
             <Header />
@@ -11,24 +33,37 @@ const Login = () => {
               className='absolute  w-full brightness-50'
             />
              <div className=' flex items-center justify-center min-h-screen relative z-10'>
-                <form className='bg-black w-[450px] h-auto bg-opacity-70 p-8 rounded-md shadow-lg'>
-                    <h1 className='text-white font-bold text-3xl ml-5 my-4'>Sign In</h1>
+                <form onSubmit={(e) =>{e.preventDefault()}} className='bg-black w-[400px] h-auto bg-opacity-75 p-8 rounded-md shadow-lg'>
+                    <h1 className='text-white font-bold text-3xl ml-5 my-4'>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+
+               { !isSignInForm && (<input 
+                        ref={name}
+                        type='text' 
+                        placeholder='Full Name' 
+                        className='w-11/12 ml-4 my-4 py-4 px-5 mb-4 rounded-md bg-black bg-opacity-10   border-[1px] text-white' 
+                    />)}
                     <input 
+                        ref={email}
                         type='text' 
                         placeholder='Email or mobile number' 
-                        className='w-10/12 ml-6 my-4 py-4 px-5 mb-4 rounded-md border border-gray-300' 
+                        className='w-11/12 ml-4 my-4 py-4 px-5 mb-4 rounded-md bg-black bg-opacity-10   border-[1px] text-white' 
                     />
                     <input 
+                        ref={password}
                         type='password' 
                         placeholder='Password' 
-                        className='w-10/12 ml-6 my-4 py-4 px-5 mb-4 rounded-md border border-gray-300' 
+                        className='w-11/12 ml-4 my-4 py-4 px-5 mb-4 rounded-md md bg-black bg-opacity-10 border-[1px] text-white' 
                     />
+
+                    <p className='ml-4 font-bold text-red-800'>{errMessage}</p>
                     <button 
                         type='submit' 
-                        className=' w-10/12 ml-6 my-5 py-2 px-10 bg-red-600 text-white rounded-md mb-4'
+                        className=' w-11/12 ml-4 my-5 py-2 px-10 bg-red-600 text-white rounded-md mb-4'
+                        onClick={formValidator}
                     >
-                        Sign In
+                    {isSignInForm ? "Sign In" : "Sign Up"}
                     </button>
+
                     <div className='flex items-center mb-4 ml-6'>
                         <input 
                             type="checkbox" 
@@ -38,11 +73,16 @@ const Login = () => {
                         />
                         <label htmlFor="myCheckbox" className='text-white'>Remember me</label>
                     </div>
-                    <h2 className='text-white text-center'>
-                        New to Netflix? <b>sign up now.</b>
+
+                    <h2 className='text-white text-center cursor-pointer' onClick={signUpHandler}>
+                        {isSignInForm ? "New to Netflix? " : "Already have an account? "}
+                        <b className='hover:underline'>
+                            {isSignInForm ? "Sign up now." : "Sign in now."}
+                        </b>
                     </h2>
                 </form>
             </div>
+            
         </div>
     )
 }
