@@ -3,13 +3,16 @@ import Header from './Header'
 import { checkValidData } from '../utils/validate';
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+    const navigate = useNavigate();  //for navigating to another web page
+
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errMessage, setErrorMessage] = useState(null);
 
     const signUpHandler = () => {
-        setIsSignInForm(!isSignInForm);
+        setIsSignInForm(!isSignInForm); //for toggling UI of sihnIN/UP form
     }
 
     //FORM VALIDATION:--
@@ -30,6 +33,7 @@ const Login = () => {
                     // Signed up 
                     const user = userCredential.user;
                     console.log(user);
+                    navigate('/browse');
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -43,7 +47,8 @@ const Login = () => {
                 .then((userCredential) => {
                     // Signed in 
                     const user = userCredential.user;
-                    console.log(user)
+                    console.log(user);
+                    navigate('/browse');
                 })
                 .catch((error) => {
                     const errorCode = error.code;
