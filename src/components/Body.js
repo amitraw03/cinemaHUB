@@ -25,8 +25,8 @@ const Body = () => {
       onAuthStateChanged(auth, (user) => {   //this is a fireBase UI helps us to get easily info of currently signed-in user
         if (user) {
           // User after signed in/up
-          const {uid, email , displayName} = user;
-          dispatch(addUser({uid: uid ,email:email, displayName:displayName }));
+          const {uid, email , displayName ,photoURL} = user;
+          dispatch(addUser({uid: uid ,email:email, displayName:displayName ,photoURL:photoURL}));
         }
          else {
           // User trying to signed out
