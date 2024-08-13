@@ -1,3 +1,47 @@
+# cinemaHUB
+
+- through create react App
+- configured Tailwind CSS
+- Header
+- Routing of App
+- Login Form 
+- signUp Form ~toggle with signIn form
+- Form Validation ~ useRef Hook
+- Firebase Setup
+- Create signUp user account
+- Implement sign In user API
+- created Redux store with userSlice
+- Implemented Sign Out
+- update Profile
+- BugFIx: signUp user displayName and pfp update
+- unsubscribed to the onAuthStateChanged callback
+- Add hardcoded values to the constants file
+- Register TMDB API & create an app & get access token
+- Get data from TMDB now playing movies list API
+- Custom Hook for nowPlayingMovies
+- create movieSlice
+- update Store with movies Data
+- planning for main and secondary container in browse
+- Fetch data from TMDB using movieId for Trailer Video
+- Update Store with Trailer Video Data
+- Embed the utube video & make it autoplay and mute
+- 
+
+# Features
+- Login/Sign Up
+     - Sign In/up Form
+     - redirect to browse page
+- Browse (after auth)
+     - Header
+     - Main Movie
+        -Trailer in Bg ~ title and overview
+        - Movie Suggestion
+          - MovieLists *N 
+
+- AI
+  - Search Bar
+  - Movie Suggestions
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
