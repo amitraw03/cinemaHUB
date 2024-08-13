@@ -45,17 +45,17 @@ const Header = () => {
     }, []);
 
     return (
-        <div>
+        <div >
             <div className='absolute w-full h-20 bg-gradient-to-b from-black  z-10 '>
-                <img className='w-48 relative left-16 top-2'
+                <img className='w-48 relative left-6 top-2'
                     src={LOGO} alt='logo'
                 />
                 {user && (  //only show user-icon info when after sign IN/UP
-                    <div>
-                        <img className='w-12 relative bottom-14 left-[1370px]'
+                    <div >
+                        <img className='w-12 relative bottom-14 left-[1405px]'
                             src={user?.photoURL} alt='user-icon' />
                         <button onClick={handleSignOut}
-                            className='relative bottom-24 left-[1418px] text-white'>
+                            className='relative bottom-24 left-[1458px] text-white'>
                             <img className='w-10 rounded-full ml-1'
                                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlky-Sg1nEZ0BNPd_XQZpBh7KZGBBu5ixzRQ&s' />
                         </button>
