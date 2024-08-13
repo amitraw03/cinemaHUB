@@ -3,3 +3,10 @@ export const LOGO ='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-8972
 
 export const USER_AVATAR ="https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg ";
 
+export const API_OPTIONS  = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MTE1ZGMzNjFjODUxYTZlODNjYzU2MzQ0YjA1OWU5MSIsIm5iZiI6MTcyMzUzMzMyMC4xMTExODMsInN1YiI6IjY2YmIwNjYwOWMyZTE5YjBkODFhZjgyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qHWRa8d_JOwfKLUwwGqcIsPQ9Gf2V-QlhajOigqCgA0'
+    }
+  };

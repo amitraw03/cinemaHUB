@@ -23,7 +23,7 @@ const Header = () => {
 
     //using useEffect to execute this(currUser SignIn) just once
     useEffect(() => {
-        const subscription= onAuthStateChanged(auth, (user) => {   //this is a fireBase UI helps us to get easily info of currently signed-in user
+        const unsubscribe = onAuthStateChanged(auth, (user) => {   //this is a fireBase UI helps us to get easily info of currently signed-in user
             if (user) {
                 // User after signed in/up
                 const { uid, email, displayName, photoURL } = user;
@@ -36,9 +36,9 @@ const Header = () => {
                 navigate('/');
             }
 
-            // Cleanup function called when component unamounts
+            // Cleanup function
             return () => {
-                subscription.unsubscribe(); 
+                unsubscribe(); // This is the correct way to unsubscribe
             };
         });
 
@@ -46,7 +46,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className='absolute w-full bg-gradient-to-b from-black  z-10 '>
+            <div className='absolute w-full h-20 bg-gradient-to-b from-black  z-10 '>
                 <img className='w-48 relative left-16 top-2'
                     src={LOGO} alt='logo'
                 />
@@ -57,7 +57,7 @@ const Header = () => {
                         <button onClick={handleSignOut}
                             className='relative bottom-24 left-[1418px] text-white'>
                             <img className='w-10 rounded-full ml-1'
-                            src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlky-Sg1nEZ0BNPd_XQZpBh7KZGBBu5ixzRQ&s'/>    
+                                src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlky-Sg1nEZ0BNPd_XQZpBh7KZGBBu5ixzRQ&s' />
                         </button>
                     </div>
                 )}
