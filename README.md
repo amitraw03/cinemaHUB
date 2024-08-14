@@ -25,7 +25,9 @@
 - Fetch data from TMDB using movieId for Trailer Video
 - Update Store with Trailer Video Data
 - Embed the utube video & make it autoplay and mute
-- 
+- Built the Movie list in secondary Container
+- Built the movie cards
+- import the IMG_CDN
 
 # Features
 - Login/Sign Up

@@ -9,7 +9,7 @@ const useMovieTrailer = (movieId) => {
 
     //fetch movie trailer from TMDB API using movieId
     const getMovieTrailer = async () => {
-        const data = await fetch('https://api.themoviedb.org/3/movie/'
+        const data = await fetch('https://api.themoviedb.org/3/movie/'  //API found in video section of Movie
                                   +movieId+'/videos?language=en-US', API_OPTIONS);
         const response = await data.json();
         // console.log(response);

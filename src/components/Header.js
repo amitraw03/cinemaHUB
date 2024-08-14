@@ -13,30 +13,29 @@ const Header = () => {
     //useSelector from strore to display name and profile pic of updated user
     const user = useSelector(store => store.user);
 
-    const handleSignOut = () => {
+    const handleSignOut = () => {                           // --- firebase API for signOut
         signOut(auth).then(() => { // Sign-out successful.
+            navigate('/');
         }).catch((error) => {
             // An error happened.
-            navigate('/error')
+            navigate('/error');
         });
     }
 
     //using useEffect to execute this(currUser SignIn) just once----for Auth USE
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {   //this is a fireBase UI helps us to get easily info of currently signed-in user
+        const unsubscribe = onAuthStateChanged(auth, (user) => {   //this is a fireBase UI helps us to get easily info of currently signed-in user 
+                                                                // & this is kind a listener which listen everytime auth changing event happening
             if (user) {
                 // User is signed in
                 const { uid, email, displayName, photoURL } = user;
                 dispatch(addUser({ uid : uid, email: email, displayName: displayName , photoURL: photoURL }));
-                if (window.location.pathname === '/') {
-                    navigate('/browse');
-                }
-            } else {
+                navigate('/browse');
+            } 
+            else {
                 // User is signed out
                 dispatch(removeUser());
-                if (window.location.pathname !== '/') {
-                    navigate('/');
-                }
+                navigate('/');
             }
 
             // Cleanup function
