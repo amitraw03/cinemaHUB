@@ -21,19 +21,22 @@ const Header = () => {
         });
     }
 
-    //using useEffect to execute this(currUser SignIn) just once
+    //using useEffect to execute this(currUser SignIn) just once----for Auth USE
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {   //this is a fireBase UI helps us to get easily info of currently signed-in user
             if (user) {
-                // User after signed in/up
+                // User is signed in
                 const { uid, email, displayName, photoURL } = user;
-                dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));
-                navigate('/browse');
-            }
-            else {
-                // User trying to signed out
+                dispatch(addUser({ uid : uid, email: email, displayName: displayName , photoURL: photoURL }));
+                if (window.location.pathname === '/') {
+                    navigate('/browse');
+                }
+            } else {
+                // User is signed out
                 dispatch(removeUser());
-                navigate('/');
+                if (window.location.pathname !== '/') {
+                    navigate('/');
+                }
             }
 
             // Cleanup function
