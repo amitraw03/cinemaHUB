@@ -28,6 +28,10 @@
 - Built the Movie list in secondary Container
 - Built the movie cards
 - import the IMG_CDN
+- applying tailwind to make it look more awesome
+- built 3 more filtered movies List along with movie cards
+- built almost the the browse page
+-
 
 # Features
 - Login/Sign Up
