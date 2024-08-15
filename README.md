@@ -31,7 +31,9 @@
 - applying tailwind to make it look more awesome
 - built 3 more filtered movies List along with movie cards
 - built almost the the browse page
--
+- Ai search Page
+- Ai search bar
+- Multi Language Feature bar
 
 # Features
 - Login/Sign Up
