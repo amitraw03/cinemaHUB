@@ -67,10 +67,10 @@ const Header = () => {
                 <div >
                     {/*  modular codding- dynamic selecting of supported Languages  */}
 
-                    {showAiSearch && (<select className='relative  bottom-14 left-[1200px] p-1 rounded-lg ' onChange={handleChangeLanguage}>
+                    {showAiSearch && (<select className='relative bg-blue-800 text-white bottom-14 left-[1200px] p-1 rounded-lg ' onChange={handleChangeLanguage}>
                         {SUPPORTED_LANG.map((lang) =>
                         (
-                            <option key={lang.identifier} value={lang.identifier}>
+                            <option key={lang.identifier} value={lang.identifier} >
                                 {lang.name}
                             </option>
                         ))}

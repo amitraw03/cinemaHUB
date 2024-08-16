@@ -7,7 +7,7 @@ export const API_OPTIONS  = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MTE1ZGMzNjFjODUxYTZlODNjYzU2MzQ0YjA1OWU5MSIsIm5iZiI6MTcyMzUzMzMyMC4xMTExODMsInN1YiI6IjY2YmIwNjYwOWMyZTE5YjBkODFhZjgyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qHWRa8d_JOwfKLUwwGqcIsPQ9Gf2V-QlhajOigqCgA0'
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MTE1ZGMzNjFjODUxYTZlODNjYzU2MzQ0YjA1OWU5MSIsIm5iZiI6MTcyMzUzMzMyMC4xMTExODMsInN1YiI6IjY2YmIwNjYwOWMyZTE5YjBkODFhZjgyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qHWRa8d_JOwfKLUwwGqcIsPQ9Gf2V-QlhajOigqCgA0',
     }
   };
 
@@ -20,3 +20,5 @@ export const SUPPORTED_LANG=[
   {identifier:'hindi', name:'Hindi'},
   {identifier:'russian', name:'Russian'},
 ];
+
+export const AI_API_KEY= process.env.REACT_APP_AI_API_KEY;
