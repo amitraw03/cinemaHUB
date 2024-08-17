@@ -9,9 +9,9 @@ const MainContainer = () => {
 
     if (!movies) return; // so initially when no movie in store no return just early exit
 
-    const mainMovie = movies[0];
+    const mainMovie = movies[1];
     console.log(mainMovie);
-    const { original_title, overview,id } = mainMovie;
+    const { original_title, overview, id } = mainMovie;
 
     return (
         <div>
