@@ -34,6 +34,8 @@
 - Ai search Page
 - Ai search bar
 - Multi Language Feature bar
+- integrate Gem AI to complete the movies suggestion feature 
+- succesfully completed cinemaHUB project
 
 # Features
 - Login/Sign Up

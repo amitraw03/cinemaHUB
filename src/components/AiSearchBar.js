@@ -34,9 +34,9 @@ const AiSearchBar = () => {
             const result = await model.generateContent(aiQuery);
             const response = await result.response;
             const aiMovies = response.text().split(',');
-            // console.log(aiMovies);  
+            console.log(aiMovies);  
 
-            const promiseArray = aiMovies.map((movie) => searchMovieTMDB(movie.trim()));
+            const promiseArray = aiMovies.map((movie) => searchMovieTMDB(movie.trim()));  // actually here we receive set of returned promises
             const tmdbResults = await Promise.all(promiseArray);  // after fetching the aigenerated movies from TMDB DB API
             console.log(tmdbResults);
 
@@ -48,7 +48,7 @@ const AiSearchBar = () => {
 
     return (
         <div >
-            <form onSubmit={(e) => { e.preventDefault() }} className='flex w-7/12 p-1 m-6 rounded-lg bg-black  absolute z-50 mt-[8%] ml-[20%]'>
+            <form onSubmit={(e) => { e.preventDefault() }} className='flex w-7/12 p-1 m-6 rounded-lg bg-black  absolute z-50 mt-[8%] ml-[21%]'>
                 <input ref={searchText} className=' w-full p-4 m-4'
                     type='text' placeholder={lang[langKey].aiSearchPlaceholder} />
 
@@ -57,13 +57,13 @@ const AiSearchBar = () => {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 22 21"
-                        stroke-width="2"
+                        strokeWidth="2"
                         stroke="white"
                         className="w-8 h-8"
                     >
                         <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1112.65 3 7.5 7.5 0 0116.65 16.65l4.35 4.35z"
                         />
                     </svg>

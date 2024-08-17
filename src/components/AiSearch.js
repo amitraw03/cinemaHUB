@@ -4,22 +4,16 @@ import { BG_URL } from '../utils/constants';
 import AiSearchBar from './AiSearchBar';
 
 const AiSearch = () => {
-//    const handleClick=(e)=>{
-//     e.stopPropagation();
-//    };
-//    const handleFormClick=(e)=>{
-//     e.stopPropagation();
-//    };
 
     return (
-        <div >
-            <img
-                src={BG_URL}
-                alt='bg-img'
-                className='absolute w-full brightness-75 z-30 '
-            />
-        <AiSearchBar/>
-        <AiMovieSuggestions/>
+        <div className="relative min-h-screen">
+            <div className="fixed top-0 left-0 w-full h-screen bg-cover bg-center -z-10"
+                style={{ backgroundImage: `url(${BG_URL})` }}>
+            </div>
+            <div className="content-container">
+                <AiSearchBar />
+                <AiMovieSuggestions />
+            </div>
         </div>
     )
 }
