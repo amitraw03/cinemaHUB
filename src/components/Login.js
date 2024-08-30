@@ -14,7 +14,7 @@ const Login = () => {
     const [errMessage, setErrorMessage] = useState(null);
 
     const signUpHandler = () => {
-        setIsSignInForm(!isSignInForm); //for toggling UI of sihnIN/UP form
+        setIsSignInForm(!isSignInForm); //for toggling UI of signIN/UP form
     }
 
     //FORM VALIDATION:--
